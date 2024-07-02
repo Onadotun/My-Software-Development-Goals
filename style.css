@@ -56,10 +56,20 @@ body {
 }
 
 .hero h2,
+.hero a,
 .hero .currentTimeGMT,
 .hero .slackEmail,
 .hero .currentDay {
   color: #21325e;
+}
+
+.hero a {
+  text-decoration: none;
+}
+
+.hero a:hover {
+  background: #4667bc;
+  padding: 5px;
 }
 
 .text-content {
