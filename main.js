@@ -18,23 +18,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateTime = () => {
     const now = new Date();
-    now.setHours(now.getHours());
-    const gmtTime = now.toTimeString().split(" ")[0];
+    const utcHours = String(now.getUTCHours()).padStart(2, "0");
+    const utcMinutes = String(now.getUTCMinutes()).padStart(2, "0");
+    const utcSeconds = String(now.getUTCSeconds()).padStart(2, "0");
+    const gmtTime = `${utcHours}:${utcMinutes}:${utcSeconds}`;
     gmtTimeElement.textContent = gmtTime;
   };
 
   const updateDay = () => {
-    const days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
     const now = new Date();
-    currentDayElement.textContent = days[now.getUTCDay()];
+    const day = String(now.getUTCDate()).padStart(2, "0");
+    const month = String(now.getUTCMonth() + 1).padStart(2, "0");
+    const year = now.getUTCFullYear();
+    const formattedDate = `${day}/${month}/${year}`;
+    currentDayElement.textContent = formattedDate;
   };
 
   showGoals(year1Goals, 500);

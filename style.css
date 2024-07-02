@@ -165,16 +165,18 @@ body {
   .hero {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 
   .hero .slackProfilePicture img {
     width: 60vw;
-    margin-bottom: 10px;
+    margin-bottom: 1rem; /* Add a bottom margin if needed */
   }
 
   .text-content {
     text-align: center;
     align-items: center;
+    padding: 0 1rem; /* Adjust padding to reduce gap */
   }
 
   .links a {
